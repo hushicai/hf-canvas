@@ -1,0 +1,19 @@
+{
+  "name": "hf-canvas",
+  "version": "1.0.0",
+  "homepage": "https://github.com/hushicai/hf-canvas",
+  "authors": [
+    "hushicai <bluthcy@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "~2.1.17"
+  }
+}

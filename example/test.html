@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>test</title>
+</head>
+<body>
+    <canvas id="test" width="400" height="400"></canvas>
+    <script src="../dep/requirejs/require.js"></script>
+    <script>
+        require.config({
+            baseUrl: '../src'
+        });
+        require(['main'], function (canvas) {
+            var el = document.getElementById('test');
+            var context = canvas.init(el);
+
+            function drawCircle(style) {
+                context.clearRect(0, 0, 400, 400);
+
+                var r = style.r || 10;
+                var x = style.x || 50;
+                var y = style.y || 50;
+
+                context.beginPath();
+                context.moveTo(x + r, y);
+                context.arc(x, y, r, 0, 2 * Math.PI, true);
+                context.closePath();
+                context.strokeStyle = 'red';
+                context.shadowColor = 'red';
+                context.shadowBlur = r / 3;
+                context.lineWidth = 1;
+                context.stroke();
+            }
+
+            drawCircle({x: 100, y: 100, r: 50});
+
+        });
+    </script>
+</body>
+</html>
